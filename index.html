@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <script>
+
+        function btnpress(x)
+        {
+             document.getElementById("t1").value += x;
+
+        }
+
+        function cleardata()
+        {
+            document.getElementById("t1").value = "";
+        
+        }
+
+        function result()
+        {
+            var a = document.getElementById("t1").value;
+            var b = eval(a);
+
+            document.getElementById("t1").value = b;
+        }
+
+        function backpress()
+        {
+            var a = document.getElementById("t1").value;
+             var b = a.length;
+
+             var c = a.substr(0, b-1);
+             document.getElementById("t1").value = c;
+        }
+    </script>
+
+        <style>
+
+            body {
+                background-color: #a2e33d;
+                font-family: Arial, sans-serif;
+            }
+
+            
+        table{
+            text-align: center;
+             width: 400px;
+             height: 420px;
+             margin-top: 100px;
+             border: 6px solid rgb(92, 82, 82);
+             box-shadow: 10px 10px 5px 10px rgb(133, 101, 101);
+        }
+
+        input{
+            border-radius: 10px;
+            font-size: 40px;
+            margin-top: 20px;
+            text-align: right;
+            width: 355px;
+            height: 50px;
+            background-color: rgb(117, 190, 166);
+            
+        }
+
+        button{
+            font-size: 20px;
+            width: 60px;
+            height: 40px;
+            background-color:white;
+            font-weight: bold;
+             border-radius: 10px;
+            box-shadow: 5px 5px 5px rgb(158, 152, 158); 
+            }
+
+        td{
+            background-color:#79857c
+        }
+
+
+        @media(max-width: 480)
+        {
+            input{
+                font-size: 18px;
+            }
+
+            button{
+                font-size: 18px;
+            }
+        }  
+
+    </style>
+    </head>
+    <body>
+        <div id="tb">
+        <center>
+            <table  cellspacing="0" cellpadding="0">
+                <tr>
+                    <td colspan="4"> <input type="text" id="t1" readonly />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button onclick="cleardata()">C</button>
+                    </td>
+                    <td>
+                        <button onclick="backpress()">&larr;</button>
+                    </td>
+                    <td>
+                        <button onclick="btnpress('%')">%</button>
+                    </td>
+                    <td>
+                        <button onclick="btnpress('/')" style="background-color:yellow;">/</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button onclick="btnpress('7')">7</button>
+                    </td>
+                    <td>
+                        <button onclick="btnpress('8')">8</button>
+                    </td>
+                    <td>
+                        <button onclick="btnpress('9')">9</button>
+                    </td>
+                    <td>
+                        <button onclick="btnpress('*')" style="background-color:yellow;">*</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button onclick="btnpress('4')">4</button>
+                    </td>
+                    <td>
+                        <button onclick="btnpress('5')">5</button>
+                    </td>
+                    <td>
+                        <button onclick="btnpress('6')">6</button>
+                    </td>
+                    <td>
+                        <button onclick="btnpress('-')" style="background-color:yellow;">-</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button onclick="btnpress('1')">1</button>
+                    </td>
+                    <td>
+                        <button onclick="btnpress('2')">2</button>
+                    </td>
+                    <td>
+                        <button onclick="btnpress('3')">3</button>
+                    </td>
+                    <td>
+                        <button onclick="btnpress('+')" style="background-color:yellow;">+</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button onclick="btnpress('0')" style="background-color:skyblue;">0</button>
+                    </td>
+                    <td>
+                        <button onclick="btnpress('.')" style="background-color:skyblue;">.</button>
+                    </td>
+                    <td>
+                        <button onclick="btnpress('00')" style="background-color:skyblue;">00</button>
+                    </td>
+                    <td>
+                        <button onclick="result()" style="background-color:yellow;">=</button>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+    </body>
+</html>
